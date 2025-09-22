@@ -222,7 +222,7 @@ async def gen_session(
         return await Opleech.send_message(user_id, f"Error: <code>{str(ex)}</code>")
 
     try:
-        txt = "⎙ Here is your {0} String Session\n\n<code>{1}</code>\n\n🦋 A String Session Bot by <a href={2}>❖ Ultroid_offical ❖ ™</a>\n☠ <b>Note :</b> Don't share your string with others"
+        txt = "⎙ Here is your {0} String Session\n\n<code>{1}</code>\n\n🦋 A String Session Bot by <a href={2}>❖ Hamster Updates ❖ ™</a>\n☠ <b>Note :</b> Don't share your string with others"
         if telethon:
             string_session = client.session.save()
             await client.send_message(
@@ -231,7 +231,7 @@ async def gen_session(
                 link_preview=False,
                 parse_mode="html",
             )
-            await client(JoinChannelRequest("@ultroidofficial_chat"))
+            await client(JoinChannelRequest("@HamsterUpdateess"))
         else:
             string_session = await client.export_session_string()
             await client.send_message(
@@ -246,12 +246,12 @@ async def gen_session(
         await client.disconnect()
         await Opleech.send_message(
             chat_id=user_id,
-            text=f"⎙ Successfully generated your {ty} String Session √\n\n❖ Please check your saved message to get it.\n\n❖ A String Generator bot by <a href={SUPPORT_CHAT}>❖ @Ultroid_Offical ❖ ™</a>.",
+            text=f"⎙ Successfully generated your {ty} String Session √\n\n❖ Please check your saved message to get it.\n\n❖ A String Generator bot by <a href={SUPPORT_CHAT}>❖ Hamster Updates ❖ ™</a>.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="🅢︎🅐︎🅥︎🅔︎🅓︎✉️ᵐᵉˢˢᵃᵍᵉ√",
+                            text="SAVE MESSAGE",
                             url=f"tg://openmessage?user_id={user_id}",
                         )
                     ]
@@ -269,7 +269,7 @@ async def cancelled(message):
             "Cancelled the ongoing string generation process..", reply_markup=retry_key
         )
         return True
-    elif "/restart" in message.text:
+    elif "/sgrestart" in message.text:
         await message.reply_text(
             "Successfully restarted this bot.", reply_markup=retry_key
         )
